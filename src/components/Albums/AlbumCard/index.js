@@ -11,8 +11,9 @@ const AlbumCard = ({ album }) => {
   return (
     <Flex vertical gap={12}>
       <Flex vertical className="album-card">
-        <img src={album.image} alt="album-cover" />
+        <img src={album.image} alt="album-cover" className="album-image" />
         <Chip
+          className="follows"
           label={`${album.follows} Follows`}
           sx={{
             backgroundColor: tabColor.colorDark,
@@ -26,7 +27,12 @@ const AlbumCard = ({ album }) => {
           }}
         />
       </Flex>
-      <Title level={5} type="secondary" style={{ margin: 0 }}>
+      <Title
+        level={5}
+        type="secondary"
+        className="album-name"
+        style={{ margin: 0 }}
+      >
         {album.title}
       </Title>
     </Flex>

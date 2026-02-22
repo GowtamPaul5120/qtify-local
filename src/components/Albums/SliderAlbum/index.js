@@ -7,7 +7,7 @@ import carouselLeft from "../../../assets/images/carouselLeft.png";
 import carouselRight from "../../../assets/images/carouselRight.png";
 import AlbumCard from "../AlbumCard";
 
-const Slider = ({ albums }) => {
+const SliderAlbum = ({ albums }) => {
   const prevRef = useRef(null);
   const nextRef = useRef(null);
   return (
@@ -66,4 +66,4 @@ const Slider = ({ albums }) => {
   );
 };
 
-export default Slider;
+export default SliderAlbum;

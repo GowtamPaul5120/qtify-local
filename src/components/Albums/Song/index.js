@@ -1,19 +1,18 @@
-import { useState, useContext } from "react";
-import { Flex, Typography, Tabs } from "antd";
-import Slider from "../Slider";
-import { topAlbums } from "../TopAlbum";
+import { Flex, Tabs, Typography } from "antd";
+import { useContext, useState } from "react";
 import { ThemeColorContext } from "../../../App";
+import SliderAlbum from "../SliderAlbum";
 
 const { Text } = Typography;
 
 const Song = () => {
   const [activeGenre, setActiveGenre] = useState("All");
-  const tabColor = useContext(ThemeColorContext);
+  const { tabColor, allAlbums } = useContext(ThemeColorContext);
 
   const filteredAlbums =
     activeGenre === "All"
-      ? topAlbums
-      : topAlbums.filter((album) => album.genre === activeGenre);
+      ? allAlbums
+      : allAlbums.filter((album) => album.genre === activeGenre);
 
   return (
     <Flex vertical gap={18} className="section">
@@ -32,7 +31,7 @@ const Song = () => {
         ]}
         className="genre-tabs"
       />
-      <Slider albums={filteredAlbums} />
+      <SliderAlbum albums={filteredAlbums} />
     </Flex>
   );
 };

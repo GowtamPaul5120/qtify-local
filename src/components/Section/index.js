@@ -1,35 +1,19 @@
 import { Button, Flex, Row, Typography } from "antd";
-import axios from "axios";
-import { useEffect, useState } from "react";
+import { useContext, useState } from "react";
+import { ThemeColorContext } from "../../App";
 import AlbumCard from "../Albums/AlbumCard";
+import SliderAlbum from "../Albums/SliderAlbum";
 import "./index.css";
 
 const { Title } = Typography;
+
 const Section = () => {
-  const [topAlbums, setTopAlbums] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
+  const { allAlbums, isLoading } = useContext(ThemeColorContext);
+  const [showAll, setShowAll] = useState(true);
 
-  const fetchAlbums = async () => {
-    setIsLoading(true);
-    try {
-      const response = await axios.get(
-        "https://qtify-backend.labs.crio.do/albums/top",
-      );
-      if (response.data.length > 0) {
-        setTopAlbums(response.data);
-      } else {
-        setTopAlbums([]);
-      }
-    } catch (err) {
-      console.error(err);
-    } finally {
-      setIsLoading(false);
-    }
+  const ToggleButton = () => {
+    setShowAll(!showAll);
   };
-
-  useEffect(() => {
-    fetchAlbums();
-  }, []);
 
   if (isLoading) {
     return <div className="loading">Loading...</div>;
@@ -41,14 +25,20 @@ const Section = () => {
         <Title type="secondary" level={3} className="sub-heading">
           Top Albums
         </Title>
-        <Button type="link">Collapse</Button>
+        <Button onClick={ToggleButton} type="link">
+          {showAll ? "Collapse" : "Show All"}
+        </Button>
       </Flex>
 
-      <Row gutter={[16, 24]} className="album-grid">
-        {topAlbums.map((album) => (
-          <AlbumCard key={album.id} album={album} />
-        ))}
-      </Row>
+      {showAll ? (
+        <Row gutter={[16, 24]} className="album-grid">
+          {allAlbums.map((album) => (
+            <AlbumCard key={album.id} album={album} />
+          ))}
+        </Row>
+      ) : (
+        <SliderAlbum albums={allAlbums} />
+      )}
     </Flex>
   );
 };

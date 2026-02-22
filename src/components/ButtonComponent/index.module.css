@@ -10,4 +10,5 @@
   cursor: pointer;
   font-size: var(--button-text-size);
   font-weight: var(--button-weight);
+  font-family: "Poppins", sans-serif;
 }

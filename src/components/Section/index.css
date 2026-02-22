@@ -1,8 +1,9 @@
 .album-grid {
   display: grid !important;
   grid-template-columns: repeat(7, 1fr);
-  gap: 24px;
+  gap: 40px;
   width: 100%;
+  margin-inline: 0 !important;
 }
 
 .album-grid img {
