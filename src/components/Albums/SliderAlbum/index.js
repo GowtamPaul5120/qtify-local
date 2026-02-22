@@ -10,6 +10,7 @@ import AlbumCard from "../AlbumCard";
 const SliderAlbum = ({ albums }) => {
   const prevRef = useRef(null);
   const nextRef = useRef(null);
+
   return (
     <div style={{ position: "relative", width: "100%" }}>
       <button
@@ -43,12 +44,19 @@ const SliderAlbum = ({ albums }) => {
       >
         <img src={carouselRight} alt="next" />
       </button>
+
       <Swiper
         modules={[Navigation]}
-        slidesPerView={7}
+        slidesPerView={4}
         spaceBetween={40}
         pagination={false}
-        loop
+        loop={false}
+        onSlideChange={(swiper) => {
+          const isFirstTwoHidden = swiper.activeIndex >= 4;
+          if (isFirstTwoHidden) {
+            console.log("First two albums are not visible.");
+          }
+        }}
         onInit={(swiper) => {
           swiper.params.navigation.prevEl = prevRef.current;
           swiper.params.navigation.nextEl = nextRef.current;
@@ -58,7 +66,7 @@ const SliderAlbum = ({ albums }) => {
       >
         {albums.map((album, index) => (
           <SwiperSlide key={index}>
-            <AlbumCard album={album} />;
+            <AlbumCard album={album} />
           </SwiperSlide>
         ))}
       </Swiper>

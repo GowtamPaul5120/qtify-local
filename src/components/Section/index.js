@@ -7,9 +7,8 @@ import "./index.css";
 
 const { Title } = Typography;
 
-const Section = () => {
-  const { allAlbums, isLoading } = useContext(ThemeColorContext);
-  const [showAll, setShowAll] = useState(true);
+const Section = ({ albums, isLoading }) => {
+  const [showAll, setShowAll] = useState(false);
 
   const ToggleButton = () => {
     setShowAll(!showAll);
@@ -32,12 +31,12 @@ const Section = () => {
 
       {showAll ? (
         <Row gutter={[16, 24]} className="album-grid">
-          {allAlbums.map((album) => (
+          {albums.map((album) => (
             <AlbumCard key={album.id} album={album} />
           ))}
         </Row>
       ) : (
-        <SliderAlbum albums={allAlbums} />
+        <SliderAlbum albums={albums} />
       )}
     </Flex>
   );

@@ -16,26 +16,6 @@ function App() {
     colorPrimary: "#09d936",
     colorWhite: "#fff",
   });
-  const [allAlbums, setAllAlbums] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
-
-  const fetchAlbums = async () => {
-    setIsLoading(true);
-    try {
-      const response = await axios.get(
-        "https://qtify-backend.labs.crio.do/albums/top",
-      );
-      if (response.data.length > 0) {
-        setAllAlbums(response.data);
-      } else {
-        setAllAlbums([]);
-      }
-    } catch (err) {
-      console.error(err);
-    } finally {
-      setIsLoading(false);
-    }
-  };
 
   useEffect(() => {
     const rootStyles = getComputedStyle(document.documentElement);
@@ -44,8 +24,6 @@ function App() {
       colorPrimary: rootStyles.getPropertyValue("--color-primary").trim(),
       colorWhite: rootStyles.getPropertyValue("--color-white").trim(),
     });
-
-    fetchAlbums();
   }, []);
 
   const themeConfig = useMemo(
@@ -65,14 +43,12 @@ function App() {
   );
 
   return (
-    <ThemeColorContext.Provider value={{ tabColor, allAlbums, isLoading }}>
+    <ThemeColorContext.Provider value={{ tabColor }}>
       <ConfigProvider theme={themeConfig}>
         <div className="App">
           <Navbar />
           <Hero />
           <TopAlbum />
-          <Song />
-          <FAQ />
         </div>
       </ConfigProvider>
     </ThemeColorContext.Provider>
