@@ -11,7 +11,7 @@ const Hero = () => {
           <br />
           Over thousands podcast episodes
         </h1>
-        <img src={headphones} />
+        <img src={headphones} alt="headphones" />
       </Flex>
     </section>
   );

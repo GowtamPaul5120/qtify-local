@@ -1,4 +1,4 @@
-import { Button, Col, Flex, Row, Typography } from "antd";
+import { Button, Flex, Row, Typography } from "antd";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import AlbumCard from "../Albums/AlbumCard";
@@ -30,6 +30,10 @@ const Section = () => {
   useEffect(() => {
     fetchAlbums();
   }, []);
+
+  if (isLoading) {
+    return <div className="loading">Loading...</div>;
+  }
 
   return (
     <Flex vertical gap={18} className="section">
