@@ -1,7 +1,7 @@
 import { Flex, Tabs, Typography } from "antd";
 import { useContext, useState } from "react";
 import { ThemeColorContext } from "../../../App";
-import SliderAlbum from "../SliderAlbum";
+import Carousel from "../Carousel";
 
 const { Text } = Typography;
 
@@ -31,7 +31,7 @@ const Song = () => {
         ]}
         className="genre-tabs"
       />
-      <SliderAlbum albums={filteredAlbums} />
+      <Carousel albums={filteredAlbums} />
     </Flex>
   );
 };

@@ -1,6 +1,6 @@
 import { Button, Flex, Row, Typography } from "antd";
 import AlbumCard from "../Albums/AlbumCard";
-import SliderAlbum from "../Albums/SliderAlbum";
+import Carousel from "../Albums/Carousel";
 import "./index.css";
 
 const { Title } = Typography;
@@ -20,19 +20,21 @@ const Section = ({ albums, isLoading, title, showAll, setShowAll }) => {
         <Title type="secondary" level={3} className="title">
           {title}
         </Title>
-        <Button onClick={ToggleButton} type="link">
-          {showAll ? "Collapse" : "Show All"}
-        </Button>
+        {albums.length > 7 && (
+          <Button onClick={ToggleButton} type="link">
+            {showAll ? "Collapse" : "Show All"}
+          </Button>
+        )}
       </Flex>
 
-      {showAll ? (
+      {!showAll && albums.length > 7 ? (
+        <Carousel albums={albums} />
+      ) : (
         <Row gutter={[16, 24]} className="album-grid">
           {albums.map((album) => (
             <AlbumCard key={album.id} album={album} />
           ))}
         </Row>
-      ) : (
-        <SliderAlbum albums={albums} />
       )}
     </Flex>
   );
