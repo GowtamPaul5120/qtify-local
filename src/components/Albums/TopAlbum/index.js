@@ -15,11 +15,7 @@ const TopAlbum = () => {
       const response = await axios.get(
         "https://qtify-backend.labs.crio.do/albums/top",
       );
-      if (response.data.length > 0) {
-        setTopAlbums(response.data);
-      } else {
-        setTopAlbums([]);
-      }
+      setTopAlbums(response.data.length > 0 ? response.data : []);
     } catch (err) {
       console.error(err);
     } finally {

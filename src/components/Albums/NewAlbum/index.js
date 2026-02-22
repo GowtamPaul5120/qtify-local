@@ -15,11 +15,7 @@ const NewAlbum = () => {
       const response = await axios.get(
         "https://qtify-backend.labs.crio.do/albums/new",
       );
-      if (response.data.length > 0) {
-        setNewAlbums(response.data);
-      } else {
-        setNewAlbums([]);
-      }
+      setNewAlbums(response.data.length > 0 ? response.data : []);
     } catch (err) {
       console.error(err);
     } finally {
