@@ -47,7 +47,7 @@ const SliderAlbum = ({ albums }) => {
 
       <Swiper
         modules={[Navigation]}
-        slidesPerView={4}
+        slidesPerView={7}
         spaceBetween={40}
         pagination={false}
         loop={false}

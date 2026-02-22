@@ -4,21 +4,21 @@ import { useEffect, useState } from "react";
 import Section from "../../Section";
 import "../index.css";
 
-const TopAlbum = () => {
-  const [topAlbums, setTopAlbums] = useState([]);
-  const [showAll, setShowAll] = useState(true);
+const NewAlbum = () => {
+  const [newAlbums, setNewAlbums] = useState([]);
+  const [showAll, setShowAll] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
 
   const fetchAlbums = async () => {
     setIsLoading(true);
     try {
       const response = await axios.get(
-        "https://qtify-backend.labs.crio.do/albums/top",
+        "https://qtify-backend.labs.crio.do/albums/new",
       );
       if (response.data.length > 0) {
-        setTopAlbums(response.data);
+        setNewAlbums(response.data);
       } else {
-        setTopAlbums([]);
+        setNewAlbums([]);
       }
     } catch (err) {
       console.error(err);
@@ -34,9 +34,9 @@ const TopAlbum = () => {
   return (
     <Flex vertical gap={18}>
       <Section
-        albums={topAlbums}
+        albums={newAlbums}
         isLoading={isLoading}
-        title="Top Albums"
+        title="New Albums"
         showAll={showAll}
         setShowAll={setShowAll}
       />
@@ -44,4 +44,4 @@ const TopAlbum = () => {
   );
 };
 
-export default TopAlbum;
+export default NewAlbum;

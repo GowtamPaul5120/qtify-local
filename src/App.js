@@ -1,6 +1,7 @@
 import { ConfigProvider } from "antd";
 import { createContext, useEffect, useMemo, useState } from "react";
 import "./App.css";
+import NewAlbum from "./components/Albums/NewAlbum";
 import TopAlbum from "./components/Albums/TopAlbum";
 import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
@@ -46,6 +47,7 @@ function App() {
           <Navbar />
           <Hero />
           <TopAlbum />
+          <NewAlbum />
         </div>
       </ConfigProvider>
     </ThemeColorContext.Provider>

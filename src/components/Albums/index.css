@@ -4,9 +4,9 @@
   padding: 32px;
 }
 
-.sub-heading {
+.title {
   color: var(--color-white);
-  font-size: var(--sub-heading);
+  font-size: vaØr(--sub-heading);
   font-weight: var(--sub-heading-semi-bold);
 }
 

@@ -1,14 +1,11 @@
 import { Button, Flex, Row, Typography } from "antd";
-import { useState } from "react";
 import AlbumCard from "../Albums/AlbumCard";
 import SliderAlbum from "../Albums/SliderAlbum";
 import "./index.css";
 
 const { Title } = Typography;
 
-const Section = ({ albums, isLoading }) => {
-  const [showAll, setShowAll] = useState(false);
-
+const Section = ({ albums, isLoading, title, showAll, setShowAll }) => {
   const ToggleButton = () => {
     setShowAll(!showAll);
   };
@@ -20,8 +17,8 @@ const Section = ({ albums, isLoading }) => {
   return (
     <Flex vertical gap={18} className="section">
       <Flex align="center" justify="space-between">
-        <Title type="secondary" level={3} className="sub-heading">
-          Top Albums
+        <Title type="secondary" level={3} className="title">
+          {title}
         </Title>
         <Button onClick={ToggleButton} type="link">
           {showAll ? "Collapse" : "Show All"}
