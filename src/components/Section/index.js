@@ -1,6 +1,5 @@
 import { Button, Flex, Row, Typography } from "antd";
-import { useContext, useState } from "react";
-import { ThemeColorContext } from "../../App";
+import { useState } from "react";
 import AlbumCard from "../Albums/AlbumCard";
 import SliderAlbum from "../Albums/SliderAlbum";
 import "./index.css";

@@ -1,10 +1,7 @@
 import { ConfigProvider } from "antd";
-import axios from "axios";
 import { createContext, useEffect, useMemo, useState } from "react";
 import "./App.css";
-import Song from "./components/Albums/Song";
 import TopAlbum from "./components/Albums/TopAlbum";
-import FAQ from "./components/FAQ";
 import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
 
