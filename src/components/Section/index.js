@@ -20,21 +20,19 @@ const Section = ({ albums, isLoading, title, showAll, setShowAll }) => {
         <Title type="secondary" level={3} className="title">
           {title}
         </Title>
-        {albums.length > 7 && (
-          <Button onClick={ToggleButton} type="link">
-            {showAll ? "Collapse" : "Show All"}
-          </Button>
-        )}
+        <Button onClick={ToggleButton} type="link">
+          {showAll ? "Collapse" : "Show All"}
+        </Button>
       </Flex>
 
-      {!showAll && albums.length > 7 ? (
-        <Carousel albums={albums} />
-      ) : (
+      {showAll ? (
         <Row gutter={[16, 24]} className="album-grid">
           {albums.map((album) => (
             <AlbumCard key={album.id} album={album} />
           ))}
         </Row>
+      ) : (
+        <Carousel albums={albums} />
       )}
     </Flex>
   );

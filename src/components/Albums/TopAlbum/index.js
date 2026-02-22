@@ -6,7 +6,7 @@ import "../index.css";
 
 const TopAlbum = () => {
   const [topAlbums, setTopAlbums] = useState([]);
-  const [showAll, setShowAll] = useState(true);
+  const [showAll, setShowAll] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
 
   const fetchAlbums = async () => {
