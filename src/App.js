@@ -5,6 +5,7 @@ import NewAlbum from "./components/Albums/NewAlbum";
 import TopAlbum from "./components/Albums/TopAlbum";
 import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
+import Songs from "./components/Songs";
 
 export const ThemeColorContext = createContext({});
 
@@ -48,6 +49,7 @@ function App() {
           <Hero />
           <TopAlbum />
           <NewAlbum />
+          <Songs />
         </div>
       </ConfigProvider>
     </ThemeColorContext.Provider>

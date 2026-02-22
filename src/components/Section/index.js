@@ -5,7 +5,7 @@ import "./index.css";
 
 const { Title } = Typography;
 
-const Section = ({ albums, isLoading, title, showAll, setShowAll }) => {
+const Section = ({ albums, isLoading, title, showAll = false, setShowAll }) => {
   const ToggleButton = () => {
     setShowAll(!showAll);
   };

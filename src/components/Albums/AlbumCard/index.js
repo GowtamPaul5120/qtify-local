@@ -1,20 +1,20 @@
-import { Flex, Typography } from "antd";
-import "./index.css";
 import { Chip } from "@mui/material";
+import { Flex, Typography } from "antd";
 import { useContext } from "react";
 import { ThemeColorContext } from "../../../App";
+import "./index.css";
 
 const { Title } = Typography;
 
-const AlbumCard = ({ album }) => {
-  const tabColor = useContext(ThemeColorContext);
+const AlbumCard = ({ album, isSong = false }) => {
+  const { tabColor } = useContext(ThemeColorContext);
   return (
     <Flex vertical gap={12}>
       <Flex vertical className="album-card">
         <img src={album.image} alt="album-cover" className="album-image" />
         <Chip
           className="follows"
-          label={`${album.follows} Follows`}
+          label={`${isSong ? album.likes : album.follows} ${isSong ? "Likes" : "Follows"}`}
           sx={{
             backgroundColor: tabColor.colorDark,
             color: tabColor.colorWhite,

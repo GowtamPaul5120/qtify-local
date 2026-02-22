@@ -1,14 +1,14 @@
 import { Collapse, ConfigProvider, Flex, Typography } from "antd";
 import { useContext } from "react";
+import { ThemeColorContext } from "../../App";
 import Arrow from "../../assets/images/accordion-arrow.png";
 import "./index.css";
-import { ThemeColorContext } from "../../App";
 
 const { Panel } = Collapse;
 const { Text } = Typography;
 
 const FAQ = () => {
-  const tabColor = useContext(ThemeColorContext);
+  const { tabColor } = useContext(ThemeColorContext);
 
   return (
     <Flex vertical gap={24} className="faq-section">

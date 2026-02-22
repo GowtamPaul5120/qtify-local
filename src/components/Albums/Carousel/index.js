@@ -7,7 +7,7 @@ import carouselLeft from "../../../assets/images/carouselLeft.png";
 import carouselRight from "../../../assets/images/carouselRight.png";
 import AlbumCard from "../AlbumCard";
 
-const Carousel = ({ albums }) => {
+const Carousel = ({ albums, isSong = false }) => {
   const prevRef = useRef(null);
   const nextRef = useRef(null);
 
@@ -66,7 +66,7 @@ const Carousel = ({ albums }) => {
       >
         {albums.map((album) => (
           <SwiperSlide key={album.id}>
-            <AlbumCard album={album} />
+            <AlbumCard album={album} isSong={isSong} />
           </SwiperSlide>
         ))}
       </Swiper>
