@@ -64,8 +64,8 @@ const SliderAlbum = ({ albums }) => {
           swiper.navigation.update();
         }}
       >
-        {albums.map((album, index) => (
-          <SwiperSlide key={index}>
+        {albums.map((album) => (
+          <SwiperSlide key={album.id}>
             <AlbumCard album={album} />
           </SwiperSlide>
         ))}

@@ -15,7 +15,7 @@ const TopAlbum = () => {
         "https://qtify-backend.labs.crio.do/albums/top",
       );
       if (response.data.length > 0) {
-        setTopAlbums(response.data.slice(0, 13));
+        setTopAlbums(response.data);
       } else {
         setTopAlbums([]);
       }
