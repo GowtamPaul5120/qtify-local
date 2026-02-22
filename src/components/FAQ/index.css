@@ -1,0 +1,16 @@
+.faq-section {
+  padding-bottom: 40px;
+}
+span.ant-typography.ant-typography-primary {
+  color: var(--color-white);
+  font-size: 50px;
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+.ant-collapse {
+  max-width: 1135px;
+  margin: auto;
+  width: 100%;
+  font-weight: 600;
+}

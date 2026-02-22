@@ -1,0 +1,20 @@
+@import "../../styles/colors.css";
+
+.section {
+  padding: 32px;
+}
+
+.sub-heading {
+  color: var(--color-white);
+  font-size: var(--sub-heading);
+  font-weight: var(--sub-heading-semi-bold);
+}
+
+.ant-typography.collapse {
+  color: var(--color-primary);
+}
+
+.ant-tabs-nav-list * {
+  font-size: var(--sub-heading);
+  font-weight: var(--sub-heading-semi-bold);
+}

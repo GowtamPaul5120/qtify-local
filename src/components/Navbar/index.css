@@ -1,0 +1,18 @@
+@import "../../styles/colors.css";
+
+.navbar {
+  background-color: var(--color-primary);
+  padding: 20px 32px;
+}
+
+.input-header {
+  max-width: 50%;
+  height: 48px;
+  border: 2px solid var(--color-dark);
+  padding: 0 1em;
+}
+
+.input :global(.ant-input-suffix) {
+  padding-left: 12px;
+  border-left: 2px solid black;
+}

@@ -1,0 +1,13 @@
+:root {
+  /* Primary Colors */
+  --color-dark: #121212;
+  --color-white: #ffffff;
+  --color-primary: #34c759;
+
+  --text: 10px;
+  --title: 14px;
+  --button-text-size: 18px;
+  --button-weight: 600;
+  --sub-heading: 20px;
+  --sub-heading-semi-bold: 500;
+}

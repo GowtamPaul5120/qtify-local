@@ -1,0 +1,10 @@
+.album-grid {
+  display: grid !important;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 24px;
+  width: 100%;
+}
+
+.album-grid img {
+  width: 100%;
+}

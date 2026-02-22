@@ -1,0 +1,13 @@
+@import "../../styles/colors.css";
+
+.button {
+  background-color: var(--color-dark);
+  color: var(--color-primary);
+  padding: 10px 16px;
+  border: 1px solid var(--color-dark);
+  height: 48px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: var(--button-text-size);
+  font-weight: var(--button-weight);
+}

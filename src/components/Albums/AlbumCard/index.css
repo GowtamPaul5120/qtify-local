@@ -1,0 +1,17 @@
+.album-card {
+  background-color: var(--color-white);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.follow-box {
+  padding: 6px 8px;
+  font-size: var(--text);
+}
+
+.follow-box .ant-typography {
+  font-size: var(--text);
+  background: var(--color-dark);
+  padding: 4px 8px;
+  border-radius: 12px;
+}

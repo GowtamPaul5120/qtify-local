@@ -1,38 +1,27 @@
+@import "./styles/colors.css";
 .App {
-  text-align: center;
+  background-color: var(--color-dark);
+}
+.ant-typography-secondary {
+  color: var(--color-white) !important;
+}
+.ant-btn-link {
+  color: var(--color-primary);
+  font-size: var(--ant-font-size-heading-3);
+  font-weight: var(--ant-font-weight-strong);
+}
+.ant-btn-link:hover {
+  color: var(--color-primary) !important;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.follow-box .ant-typography {
+  font-size: var(--text);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.follow-box > div {
+  background: var(--color-dark);
+  color: var(--color-white);
+  padding: 8px;
+  border-radius: 20px;
+  width: fit-content;
 }

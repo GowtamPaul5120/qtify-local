@@ -1,0 +1,11 @@
+@import "../../styles/colors.css";
+
+.hero {
+  color: var(--color-white);
+  padding: 30px;
+}
+
+.hero-section {
+  max-width: 800px;
+  margin: auto;
+}
